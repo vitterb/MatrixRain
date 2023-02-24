@@ -21,7 +21,7 @@ namespace Matrix
                 int num = rnd.Next(AsciiStart, AsciiEnd);
                 if (counter2 == 0)
                 {
-                    y = rnd.Next(0, Console.WindowHeight -10); ;
+                    y = rnd.Next(0, Console.WindowHeight -11); ;
                     x = rnd.Next(0, Console.WindowWidth); ;
                     Console.SetCursorPosition(x, y);
                 }
@@ -59,7 +59,7 @@ namespace Matrix
                 {
                     counter2 = 0;
                 } 
-                if (counter == 5000)
+                if (counter > 5000)
                 {
                     Console.Clear();
                 }
