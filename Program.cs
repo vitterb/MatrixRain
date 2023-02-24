@@ -71,6 +71,7 @@ namespace Matrix
                 if (counter > 5000)
                 {
                     Console.Clear();
+                    counter = 0;
                 }
             }
         }
