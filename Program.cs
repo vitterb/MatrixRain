@@ -18,7 +18,7 @@ namespace Matrix
             int y = 0;
             // creating a random generator
             Random rnd = new Random();
-            // making the cursor invisable
+            // making the cursor invisible
             Console.CursorVisible = false;
             // starting infinite loop
             while (true)
@@ -37,7 +37,7 @@ namespace Matrix
                     Console.SetCursorPosition(x, y++);
                 }
 
-                // randomizing colours of the symbols
+                // randomizing colour of the symbols
                 if (counter % 5 == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -62,7 +62,7 @@ namespace Matrix
                 // updating counters
                 counter++;
                 counter2++;
-                // using counter2 to make lines between 5 and 9 symbols long and adding a saftey net 
+                // using counter2 to make lines between 5 and 9 symbols long and adding a safety net 
                 if (counter2 == rnd.Next(5,9) || counter2 >= 10)
                 {
                     counter2 = 0;
