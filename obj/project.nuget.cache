@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "R9dOWdcGOBKvY1GTt7G1+XuEXRiZ6Ks5XEnA8C6WrbKjKRQyO0VpqHbg/D3EPnhMks1Nrh5eYSUV3SZAT1IgnQ==",
+  "dgSpecHash": "nF/JbBplBH7UbhtYCnpVTx1E6z34uKGsE/e69Js/N21uYlazRSs/4C2cIpM0ss4/jJWql8lRAk9hoZGebAFyPw==",
   "success": true,
-  "projectFilePath": "C:\\Practice\\MatrixRain\\Matrix.csproj",
+  "projectFilePath": "C:\\practice\\Matrix.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512",
-    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512"
+    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\bvani\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\bvani\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512",
+    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\bvani\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512"
   ],
   "logs": []
 }

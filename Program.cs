@@ -1,4 +1,8 @@
-using System;
+﻿using System;
+using System.Globalization;
+using System.Media;
+using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Matrix
 {
@@ -6,10 +10,11 @@ namespace Matrix
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8; // set the output encoding to UTF-8
             Console.CursorVisible = false;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-
-            MatrixAnimation matrixAnimation = new MatrixAnimation(62, 400);
+            MatrixAnimation matrixAnimation = new MatrixAnimation(48, 12354);
             matrixAnimation.Run();
         }
     }
@@ -23,6 +28,7 @@ namespace Matrix
         private int cursorX;
         private int cursorY;
         private Random random;
+        private SoundPlayer soundPlayer;
 
         public MatrixAnimation(int asciiStart, int asciiEnd)
         {
@@ -41,6 +47,10 @@ namespace Matrix
             {
                 int randomSymbol = random.Next(asciiStart, asciiEnd);
 
+                if (char.IsControl((char)randomSymbol) || CharUnicodeInfo.GetUnicodeCategory(Convert.ToChar(randomSymbol)) == UnicodeCategory.OtherSymbol)
+                {
+                    continue;
+                }
                 if (lineCounter == 0)
                 {
                     cursorY = random.Next(0, Console.WindowHeight - 11);
