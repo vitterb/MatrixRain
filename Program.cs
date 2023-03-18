@@ -1,77 +1,83 @@
-﻿using System;
+using System;
 
 namespace Matrix
 {
     public class Program
     {
-
         static void Main (string[] args)
         {
-            // setting start and end point in ascii table to get printable symbols
-            int AsciiStart = 62;
-            int AsciiEnd = 400;
-            //setting up counters to use for changes in colors and display positions
-            int counter = 0;
-            int counter2 = 0;
-            //setting up variables to use for axis
-            int x = 0;
-            int y = 0;
-            // creating a random generator
+            // Setting up variables to control the range of printable symbols from the ASCII table
+            int asciiStart = 62;
+            int asciiEnd = 400;
+
+            // Setting up counters for color and display position changes
+            int colorCounter = 0;
+            int lineCounter = 0;
+
+            // Initializing variables for cursor position
+            int cursorX = 0;
+            int cursorY = 0;
+
+            // Creating a new instance of the Random class
             Random rnd = new Random();
-            // making the cursor invisible
+
+            // Hiding the cursor
             Console.CursorVisible = false;
-            // starting infinite loop
+
+            // Starting an infinite loop
             while (true)
             {   
-                // getting a random number from the ascii table
-                int num = rnd.Next(AsciiStart, AsciiEnd);
-                // setting cursor position
-                if (counter2 == 0)
+                // Generating a random number within the specified range of ASCII symbols
+                int randomSymbol = rnd.Next(asciiStart, asciiEnd);
+
+                // Setting the cursor position
+                if (lineCounter == 0)
                 {
-                    y = rnd.Next(0, Console.WindowHeight -11); ;
-                    x = rnd.Next(0, Console.WindowWidth); ;
-                    Console.SetCursorPosition(x, y);
+                    // If this is the start of a new line, randomly choose a Y coordinate within the window
+                    cursorY = rnd.Next(0, Console.WindowHeight - 11);
+                    cursorX = rnd.Next(0, Console.WindowWidth);
+                    Console.SetCursorPosition(cursorX, cursorY);
                 }
                 else
                 {
-                    Console.SetCursorPosition(x, y++);
+                    // Otherwise, increment the Y coordinate to move down one line
+                    Console.SetCursorPosition(cursorX, cursorY++);
                 }
 
-                // randomizing colour of the symbols
-                if (counter % 5 == 0)
+                // Randomizing the color of the symbol
+                if (colorCounter % 5 == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(Convert.ToChar(num));
-                    Console.ResetColor();
-                    System.Threading.Thread.Sleep(10);
                 }
-                else if (counter % 7 == 0)
+                else if (colorCounter % 7 == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(Convert.ToChar(num));
-                    Console.ResetColor();
-                    System.Threading.Thread.Sleep(10);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine(Convert.ToChar(num));
-                    Console.ResetColor();
-                    System.Threading.Thread.Sleep(10);
                 }
-                // updating counters
-                counter++;
-                counter2++;
-                // using counter2 to make lines between 5 and 9 symbols long and adding a safety net 
-                if (counter2 == rnd.Next(5,9) || counter2 >= 10)
+
+                // Writing the symbol to the console and resetting the color
+                Console.WriteLine(Convert.ToChar(randomSymbol));
+                Console.ResetColor();
+                System.Threading.Thread.Sleep(10);
+
+                // Updating counters
+                colorCounter++;
+                lineCounter++;
+
+                // Using lineCounter to make lines between 5 and 9 symbols long, and adding a safety net
+                if (lineCounter == rnd.Next(5, 9) || lineCounter >= 10)
                 {
-                    counter2 = 0;
+                    lineCounter = 0;
                 } 
-                // When 5000 loops have been completed Clear console.
-                if (counter > 5000)
+
+                // Clearing the console after 5000 loops
+                if (colorCounter > 5000)
                 {
                     Console.Clear();
-                    counter = 0;
+                    colorCounter = 0;
                 }
             }
         }
